@@ -33,6 +33,8 @@ branches:
   only:
     - develop
     - master
+    - /release/.*/
+    - /hotfix/.*/
 
 #---------------------------------#
 #  Build Cache                    #

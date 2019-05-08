@@ -9,10 +9,20 @@ image: Visual Studio 2017
 build_script:
   - ps: .\build.ps1 -Target AppVeyor
 
+#---------------------------------#
 # Tests
+#---------------------------------#
 test: off
 
-# Do not build feature branch with open Pull Requests
+#---------------------------------#
+#  Pull Requests                  #
+#---------------------------------#
+pull_requests:
+  do_not_increment_build_number: true
+
+#---------------------------------#
+#  General                        #
+#---------------------------------#
 skip_branch_with_pr: true
 
 #---------------------------------#
@@ -28,8 +38,7 @@ branches:
 #  Build Cache                    #
 #---------------------------------#
 cache:
-- tools -> recipe.cake
-- tools -> tools/packages.config
+- tools -> recipe.cake, tools/packages.config
 
 #---------------------------------#
 #  Skip builds for doc changes    #

@@ -12,6 +12,9 @@ build_script:
 # Tests
 test: off
 
+# Do not build feature branch with open Pull Requests
+skip_branch_with_pr: true
+
 #---------------------------------#
 #        Branches to build        #
 #---------------------------------#
@@ -26,6 +29,7 @@ branches:
 #---------------------------------#
 cache:
 - tools -> recipe.cake
+- tools -> tools/packages.config
 
 #---------------------------------#
 #  Skip builds for doc changes    #
